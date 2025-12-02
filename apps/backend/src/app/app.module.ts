@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule, ConfigModuleOptions } from '@nestjs/config';
+import { OHLCModule } from '../ohlc/ohlc.module';
+
+const configModuleOptions: ConfigModuleOptions = {
+  isGlobal: true,
+  envFilePath: '.env',
+};
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot(configModuleOptions),
+    OHLCModule,
+  ],
 })
 export class AppModule {}

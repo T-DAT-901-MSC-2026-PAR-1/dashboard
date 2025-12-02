@@ -1,7 +1,10 @@
 import { Module } from '@nestjs/common';
-import { OhlcGateway } from './ohlc.gateway';
+import { OHLCGateway } from './ohlc.gateway';
+import { OhlcConsumerControllerController } from './ohlc-consumer-controller/ohlc-consumer-controller.controller';
+import { KafkaConsumerController } from './kafka-consumer/kafka-consumer.controller';
 
 @Module({
-  providers: [OhlcGateway]
+  providers: [OHLCGateway],
+  controllers: [OhlcConsumerControllerController, KafkaConsumerController]
 })
-export class OhlcModule {}
+export class OHLCModule {}
