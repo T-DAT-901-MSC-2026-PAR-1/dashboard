@@ -2,9 +2,15 @@ services:
   frontend:
     build:
       context: ../..
-      dockerfile: ./apps/frontend/Dockerfile
+      dockerfile: ./apps/frontend/Dockerfile.dev
     ports:
-      - "4200:80"
+      - "4200:4200"
+    volumes:
+      - ../../apps/frontend/src:/workspace/apps/frontend/src
+      - ../../apps/frontend/public:/workspace/apps/frontend/public
+      - ../../apps/frontend/index.html:/workspace/apps/frontend/index.html
+      - ../../apps/frontend/vite.config.ts:/workspace/apps/frontend/vite.config.ts
+      - ../../libs:/workspace/libs
     env_file:
       - ../../.env
     depends_on:
