@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "lightweight-charts": "^5.0.9"
+    "@dashboard/shared": "*",
+    "lightweight-charts": "^5.0.9",
+    "socket.io-client": "^4.8.1"
   }
 }

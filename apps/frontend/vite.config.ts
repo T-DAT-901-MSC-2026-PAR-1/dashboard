@@ -18,7 +18,9 @@ export default defineConfig(() => ({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
+      '@dashboard/shared': resolve(__dirname, '../../libs/shared/src/index.ts'),
     },
+    conditions: ['@dashboard/source'],
   },
   // Uncomment this if you are using workers.
   // worker: {

@@ -7,6 +7,7 @@ WORKDIR /workspace
 # Copy package files
 COPY package*.json ./
 COPY apps/frontend/package.json ./apps/frontend/
+COPY libs/shared/package.json ./libs/shared/
 
 # Install dependencies
 RUN npm ci
@@ -14,6 +15,7 @@ RUN npm ci
 # Copy workspace configuration and source code
 COPY nx.json tsconfig.base.json tsconfig.json eslint.config.mjs jest.preset.js jest.config.ts vitest.workspace.ts ./
 COPY apps/frontend ./apps/frontend/
+COPY libs/shared ./libs/shared/
 
 # Sync NX workspace and build the frontend application
 RUN npx nx sync --skip-nx-cache && npx nx build frontend --prod
