@@ -9,8 +9,6 @@ const EXCHANGES: ExchangeConfig[] = [
   { name: 'CoinEx', color: '#00C087', baseVolume: 2 },
   { name: 'Bitfinex', color: '#52626F', baseVolume: 40 },
 ];
-
-const BASE_PRICE = 90000;
 const MAX_HISTORY = 60;
 const UPDATE_INTERVAL = 10000;
 const TREND_CHANGE_INTERVAL = 3;

@@ -74,7 +74,7 @@ export function AssetDetailPage() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {activeTab === 'ohlc' && <OHLCView />}
+        {activeTab === 'ohlc' && <OHLCView symbol={symbol || 'BTC'} />}
         {activeTab === 'vwap' && <VWAPView symbol={symbol || 'BTC'} />}
         {activeTab === 'variation' && <PriceVariationView />}
         {activeTab === 'volatility' && <VolatilityView />}
