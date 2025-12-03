@@ -1,14 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from '@/pages/Home';
-import { DashboardPage } from '@/pages/Dashboard';
-import { SettingsPage } from '@/pages/Settings';
+import { HomePage } from '../pages/Home';
+import { AssetDetailPage } from '../pages/AssetDetail';
 
 export function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/settings" element={<SettingsPage />} />
+      <Route path="/asset/:symbol" element={<AssetDetailPage />} />
     </Routes>
   );
 }

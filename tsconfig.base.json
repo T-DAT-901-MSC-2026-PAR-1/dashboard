@@ -16,6 +16,11 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@dashboard/source"]
+    "customConditions": ["@dashboard/source"],
+    "baseUrl": ".",
+    "paths": {
+      "@dashboard/shared": ["libs/shared/src/index.ts"],
+      "@dashboard/shared/*": ["libs/shared/src/*"]
+    }
   }
 }

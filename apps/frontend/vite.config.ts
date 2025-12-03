@@ -8,7 +8,7 @@ export default defineConfig(() => ({
   cacheDir: '../../node_modules/.vite/apps/frontend',
   server: {
     port: 4200,
-    host: 'localhost',
+    host: '0.0.0.0',
   },
   preview: {
     port: 4200,
@@ -18,7 +18,9 @@ export default defineConfig(() => ({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
+      '@dashboard/shared': resolve(__dirname, '../../libs/shared/src/index.ts'),
     },
+    conditions: ['@dashboard/source'],
   },
   // Uncomment this if you are using workers.
   // worker: {

@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "lightweight-charts": "^5.0.9"
+    "@dashboard/shared": "*",
+    "clsx": "^2.1.1",
+    "lightweight-charts": "^5.0.9",
+    "lucide-react": "^0.555.0",
+    "react-router-dom": "^6.29.0",
+    "socket.io-client": "^4.8.1",
+    "tailwind-merge": "^3.4.0"
   }
 }

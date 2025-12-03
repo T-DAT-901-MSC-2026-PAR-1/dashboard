@@ -1,0 +1,23 @@
+FROM docker.io/node:lts-alpine
+
+WORKDIR /workspace
+
+# Copy package files
+COPY package*.json ./
+COPY apps/frontend/package.json ./apps/frontend/
+COPY libs/shared/package.json ./libs/shared/
+
+# Install dependencies
+RUN npm install
+
+# Copy workspace configuration
+COPY nx.json tsconfig.base.json tsconfig.json ./
+# Copy source code
+COPY apps/frontend ./apps/frontend/
+COPY libs/shared ./libs/shared/
+
+# Expose port
+EXPOSE 4200
+
+# Start the dev server
+CMD ["sh", "-c", "npx nx sync && npx nx serve frontend --host 0.0.0.0"]
