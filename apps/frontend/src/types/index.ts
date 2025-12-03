@@ -93,3 +93,21 @@ export interface ErrorState {
   error?: Error;
   message?: string;
 }
+
+export type Exchange = 'Binance' | 'Coinbase' | 'Kraken' | 'xtpub' | 'CoinEx' | 'Bitfinex';
+
+export interface VwapData {
+  window_start: string;
+  window_end: string;
+  market: Exchange;
+  from_symbol: string;
+  to_symbol: string;
+  vwap: number;
+  volume: number;
+}
+
+export interface ExchangeConfig {
+  name: Exchange;
+  color: string;
+  baseVolume: number;
+}

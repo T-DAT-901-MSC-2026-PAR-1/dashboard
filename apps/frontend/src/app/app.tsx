@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from '@/pages/Home';
-import { AssetDetailPage } from '@/pages/AssetDetail';
+import { HomePage } from '../pages/Home';
+import { AssetDetailPage } from '../pages/AssetDetail';
 
 export function App() {
   return (

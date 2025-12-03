@@ -8,7 +8,7 @@ import {
   PriceVariationView, 
   VolatilityView, 
   IntradayRangeView 
-} from '@/components/AssetTabs';
+} from '../../components/AssetTabs';
 
 type TabType = 'ohlc' | 'vwap' | 'variation' | 'volatility' | 'range';
 
@@ -48,7 +48,7 @@ export function AssetDetailPage() {
       {/* Tab Navigation */}
       <div className="border-b border-gray-800 bg-gray-900/50 sticky top-0 z-10 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex space-x-1 overflow-x-auto py-2">
+          <nav className="flex space-x-2 overflow-x-auto p-2">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -75,7 +75,7 @@ export function AssetDetailPage() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeTab === 'ohlc' && <OHLCView />}
-        {activeTab === 'vwap' && <VWAPView />}
+        {activeTab === 'vwap' && <VWAPView symbol={symbol || 'BTC'} />}
         {activeTab === 'variation' && <PriceVariationView />}
         {activeTab === 'volatility' && <VolatilityView />}
         {activeTab === 'range' && <IntradayRangeView />}
